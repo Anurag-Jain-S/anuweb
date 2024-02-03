@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake Game</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    canvas {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="snakeCanvas" width="400" height="400"></canvas>
+
+  <script>
+    const canvas = document.getElementById("snakeCanvas");
+    const ctx = canvas.getContext("2d");
+
+    const gridSize = 20;
+    let snake = [{ x: 10, y: 10 }];
+    let food = { x: 15, y: 15 };
+    let direction = "right";
+
+    function draw() {
+      // Clear the canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw the snake
+      ctx.fillStyle = "#00f";
+      snake.forEach(segment => ctx.fillRect(segment.x * gridSize, segment.y * gridSize, gridSize, gridSize));
+
+      // Draw the food
+      ctx.fillStyle = "#f00";
+      ctx.fillRect(food.x * gridSize, food.y * gridSize, gridSize, gridSize);
+    }
+
+    function update() {
+      // Move the snake
+      const head = { ...snake[0] };
+      switch (direction) {
+        case "up": head.y--; break;
+        case "down": head.y++; break;
+        case "left": head.x--; break;
+        case "right": head.x++; break;
+      }
+      snake.unshift(head);
+
+      // Check for collision with food
+      if (head.x === food.x && head.y === food.y) {
+        // Generate new food
+        food = {
+          x: Math.floor(Math.random() * canvas.width / gridSize),
+          y: Math.floor(Math.random() * canvas.height / gridSize)
+        };
+      } else {
+        // Remove the last segment of the snake
+        snake.pop();
+      }
+
+      // Check for collision with walls
+      if (head.x < 0 || head.y < 0 || head.x >= canvas.width / gridSize || head.y >= canvas.height / gridSize) {
+        // Game over
+        alert("Game Over!");
+        resetGame();
+      }
+    }
+
+    function resetGame() {
+      snake = [{ x: 10, y: 10 }];
+      food = { x: 15, y: 15 };
+      direction = "right";
+    }
+
+    function gameLoop() {
+      draw();
+      update();
+    }
+
+    document.addEventListener("keydown", function (event) {
+      switch (event.key) {
+        case "ArrowUp": direction = "up"; break;
+        case "ArrowDown": direction = "down"; break;
+        case "ArrowLeft": direction = "left"; break;
+        case "ArrowRight": direction = "right"; break;
+      }
+    });
+
+    setInterval(gameLoop, 100);
+  </script>
+</body>
+</html>
