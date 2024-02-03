@@ -1,30 +1,75 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Welcome to Our Website</title>
+    <style>
+        body {
+            background-image: url('background.jpg'); /* Replace 'background.jpg' with your image file */
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        #about img {
+            border-radius: 50%;
+            max-width: 200px;
+            margin: 20px auto;
+            display: block;
+        }
+    </style>
+    <title>Your Website</title>
 </head>
-<body style="background-image: url('background.jpg');">
+<body>
     <header>
-        <h1>Welcome to Our Website</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="social.html">Social</a></li>
+                <li><a href="snake.html">Snake Game</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="game.html">Game</a></li>
-                <li><a href="puzzle.html">Puzzle</a></li>
-                <li><a href="snake.html">Snake</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <section>
-        <h2>Explore, Learn, Connect</h2>
-        <p>We extend a warm welcome to you on our website! Here, we strive to create an enriching digital experience where you can explore the diverse facets of Electrical and Electronics Engineering, discover our range of services, and connect with us. Whether you are a fellow enthusiast, a student, or someone curious about the world of technology, we invite you to navigate through our pages, learn more about our endeavors, and feel free to reach out. Join us on this journey of knowledge, innovation, and collaboration. Welcome aboard!</p>
+
+    <section id="welcome">
+        <h1>Welcome to Our Website</h1>
+        <p>Your introduction/welcome message goes here.</p>
     </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <img src="person.jpg" alt="Your Photo"> <!-- Replace 'person.jpg' with your image file -->
+        <p>Hello, I'm Anurag Jain S, a 7th-semester student studying Electrical and Electronics Engineering. I have a passion for exploring the realms of technology and understanding the intricacies of electrical systems. Throughout my academic journey, I've been actively involved in various projects and extracurricular activities, honing my skills and knowledge in the field. Aspiring to contribute to innovations in the world of Electrical and Electronics, I am driven by curiosity and a commitment to continuous learning.</p>
+    </section>
+
+    <section id="snake">
+        <h2>Snake Game</h2>
+        <p>Enjoy playing the Snake Game! Use arrow keys to control the snake.</p>
+        <canvas id="snakeCanvas" width="400" height="400"></canvas>
+        <script src="snake.js"></script>
+    </section>
+
+    <section id="blog">
+        <h2>Blog</h2>
+        <p>Read our latest blog posts here.</p>
+        <!-- Your blog content goes here -->
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Your contact information and a form can go here.</p>
+        <!-- Your contact form goes here -->
+    </section>
+
+    <footer>
+        <p>Connect with me: 
+            <a href="https://www.instagram.com/_i.anuragg_?igsh=MXFjZmpjeHRub20zZQ==" target="https://www.instagram.com/_i.anuragg_?igsh=MXFjZmpjeHRub20zZQ==">Instagram</a> | 
+            <a href="https://accounts.google.com/v3/signin/challenge/pwd?TL=AHNYTIRLPjdOdT9KPT2F-foC3YfqYA7rjevoQ0-kI-EbTLMZN2RwUuJ_7vAaipUD&checkConnection=youtube%3A150&checkedDomains=youtube&cid=1&continue=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F%3Ftab%3Drm%26ogbl&emr=1&flowEntry=ServiceLogin&flowName=GlifWebSignIn&followup=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F%3Ftab%3Drm%26ogbl&ifkv=ASKXGp0oniBy9u5ZCBqfVkuFPaxNOelm8kCn3lyaph5llWc_v-R2_baQt3EwL8wFfwNjx5NSZ-GL&osid=1&pstMsg=1&service=mail&theme=glif" target="https://accounts.google.com/v3/signin/challenge/pwd?TL=AHNYTIRLPjdOdT9KPT2F-foC3YfqYA7rjevoQ0-kI-EbTLMZN2RwUuJ_7vAaipUD&checkConnection=youtube%3A150&checkedDomains=youtube&cid=1&continue=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F%3Ftab%3Drm%26ogbl&emr=1&flowEntry=ServiceLogin&flowName=GlifWebSignIn&followup=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F%3Ftab%3Drm%26ogbl&ifkv=ASKXGp0oniBy9u5ZCBqfVkuFPaxNOelm8kCn3lyaph5llWc_v-R2_baQt3EwL8wFfwNjx5NSZ-GL&osid=1&pstMsg=1&service=mail&theme=glif">Gmail</a> | 
+            <a href="https://www.linkedin.com/in/anuragjain29oct" target="https://www.linkedin.com/in/anuragjain29oct">LinkedIn</a>
+        </p>
+    </footer>
 </body>
 </html>
